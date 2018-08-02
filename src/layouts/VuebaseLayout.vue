@@ -297,7 +297,7 @@
                     {id: 3, title: 'Logs', link: 'logs'}
                 ],
                 menuItems: [
-                    'Vue', 'NodeJS', 'Laravel'
+                    'Today', 'Tomorrow', 'Next Tomorrow'
                 ],
                 searching: false,
                 search: ''

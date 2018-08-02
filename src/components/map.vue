@@ -1,54 +1,69 @@
 <template>
-   <googlemaps-map
-  :center.sync="center"
-  :zoom.sync="zoom"
-  :options="mapOptions"
-  @idle="onIdle"
-  @click="onMapClick">
 
-  <!-- User Position -->
-  <googlemaps-user-position
-    @update:position="setUserPosition"
-  />
-
-  <googlemaps-marker
-    v-for="marker of markers"
-    :key="marker._id"
-    :label="{
-      color: marker === currentmarker ? 'white' : 'black',
-      fontFamily: 'Material Icons',
-      fontSize: '20px',
-      text: 'star_rate',
-    }"
-    :position="marker.position"
-    @click="selectMarker(marker._id)"
-  />
-</googlemaps-map>
+  <div class="map">
+      <button class="btn btn-lg btn-success" v-on:click="changeMrker()">change</button>
+    <span class="marker" v-class="{active: isActive}"></span>
+    <span class="marker" v-class="{active: isActive}"></span>
+    <span class="marker" v-class="{active: isActive}"></span>
+    <span class="marker" v-class="{active: isActive}"></span>
+    <span class="marker" v-class="{active: isActive}"></span>
+    <span class="marker" v-class="{active: isActive}"></span>
+    <span class="marker" v-class="{active: isActive}"></span>
+    <span class="marker" v-class="{active: isActive}"></span>
+    <span class="marker" v-class="{active: isActive}"></span>
+    <span class="marker" v-class="{active: isActive}"></span>
+    <span class="marker" v-class="{active: isActive}"></span>
+  <span class="marker" v-class="{active: isActive}"></span>
+  </div>
 </template>
-
-
 <script>
-import 'vue-googlemaps/dist/vue-googlemaps.css'
-import VueGoogleMaps from 'vue-googlemaps'
-import Vue from 'vue'
-
-Vue.use(VueGoogleMaps, {
-  load: {
-    // Google API key
-    apiKey: 'AIzaSyAgjEG0lCRC0WVgzQCQsNd9oc8tzIHsge0',
-    // Enable more Google Maps libraries here
-    libraries: ['places'],
-    // Use new renderer
-    useBetaRenderer: false,
-  },
-})
 export default {
     name:'map',
     data(){
         return{
-            msg:'map'
+            isActive:false
         }
-    }
+    },
+    methods:{
+        changeMrker:function(){
+            this.active=(this.active==true)?false:true
+            console.log('o=====>>')
+        }
+    },
+   
 }
 </script>
+
+ 
+<style scoped>
+.map{
+       background-image: url('./../assets/map.jpg');
+        background-position: center;
+        background-size: cover;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+}
+.btn-success{
+   position: absolute;
+    z-index: 3;
+    right: 0;
+    width: 20em;
+    top: 69px;
+}
+.marker{
+  background-color: #4ef037;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;padding: 1em;
+    position: absolute;
+    z-index: 2;
+}
+.Active{
+   background-color: #ce2525;
+}
+</style>
+
 
