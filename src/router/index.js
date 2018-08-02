@@ -10,6 +10,12 @@ const routes = [
         component: () => import('@/components/Home')
     },
     {
+        path: '/map',
+        name: 'map',
+        component: () => import('@/components/map')
+    },
+    
+    {
         path: '/dashboard',
         name: 'dashboard',
         component: () => import('@/components/Dashboard/Layout'),

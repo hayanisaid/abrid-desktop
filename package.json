@@ -2,15 +2,20 @@
   "name": "vuebase",
   "version": "1.0.0",
   "description": "Vuebase, a Firebase-like theme",
+  "main": "app.js",
   "author": "Nasirou Wagana <wnasirou@gmail.com>",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "desktop": "electron ."
   },
   "dependencies": {
+    "chart.js": "^2.7.2",
     "vue": "^2.5.16",
+    "vue-chartjs": "^3.3.2",
+    "vue-googlemaps": "^0.1.1",
     "vuetify": "^1.0.16"
   },
   "devDependencies": {
@@ -26,6 +31,9 @@
     "chalk": "^2.0.1",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.0",
+    "electron": "^2.0.6",
+    "electron-packager": "^11.0.1",
+    "electron-reload": "^1.2.2",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^1.1.4",
     "friendly-errors-webpack-plugin": "^1.6.1",

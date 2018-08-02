@@ -3,7 +3,6 @@
         <v-toolbar
                 dense
                 tabs
-                color="primary"
                 dark
         >
             <v-toolbar-title class="pl-2">Dashboard</v-toolbar-title>

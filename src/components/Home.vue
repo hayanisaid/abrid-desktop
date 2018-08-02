@@ -2,80 +2,49 @@
     <div>
         <v-toolbar
                 dense
-                color="primary"
                 dark
                 extended
                 extension-height="300"
                 flat
+                class="back"
         >
+         <div class="overlay"></div>
             <v-toolbar-title class="mx-auto" slot="extension">
-                <span>Welcome to Vuebase</span>
-                <h2>Everything starts here.</h2>
-                <v-layout row>
-                    <v-flex wrap>
-                        <v-btn outline large fab color="white" class="outine-2">
-                            <i class="fab fa-vuejs fa-3x"></i>
-                        </v-btn>
-                    </v-flex>
-                    <v-flex wrap>
-                        <v-btn outline large fab color="white" class="outine-2">
-                            <i class="fab fa-node fa-3x"></i>
-                        </v-btn>
-                    </v-flex>
-                    <v-flex wrap>
-                        <v-btn outline large fab color="white" class="outine-2">
-                            <i class="fab fa-laravel fa-2x"></i>
-                        </v-btn>
-                    </v-flex>
-                </v-layout>
+                <h1>Mangaing the Traffic in Smart way Using AI</h1>
+                <h2>Manage and Analyse the Hajj traffic</h2>
+               
             </v-toolbar-title>
         </v-toolbar>
 
-        <v-container>
-            <v-layout row>
-                <v-flex xs12 md8 offset-md2>
-                    <v-card flat class="card--flex-toolbar" color="transparent">
-                        <v-container fluid grid-list-lg>
-                            <v-layout row wrap>
-                                <v-flex xs12>
-                                    <h2 class="white--text">Discover Vuebase</h2>
-                                </v-flex>
-                            </v-layout>
-                            <v-layout row wrap>
-                                <v-flex xs12 sm6 md6 lg4 v-for="item in links" :key="item.id">
-                                    <v-card>
-                                        <v-card-media
-                                                src=""
-                                                height="125px"
-                                                :class="item.color"
-                                        >
-                                        </v-card-media>
-                                        <v-card-title primary-title>
-                                            <div>
-                                                <h3 class="headline mb-0">{{item.title}}</h3>
-                                                <div>
-                                                    {{item.description}}
-                                                </div>
-                                            </div>
-                                        </v-card-title>
-                                        <v-card-actions>
-                                            <v-btn flat color="primary" class="learn-more-btn">Learn more</v-btn>
-                                            <v-spacer></v-spacer>
-                                            <v-btn flat color="primary">Get started</v-btn>
-                                        </v-card-actions>
-                                    </v-card>
-                                </v-flex>
-                            </v-layout>
-                        </v-container>
-                    </v-card>
-                </v-flex>
-            </v-layout>
-        </v-container>
+        <div>
+             <div class="row">
+                   <div class="col-md-3 col-lg-4 card" width='200px'>
+                      <Barchart/>
+                   </div>
+                   <div class="col-md-6 col-lg-7 card">
+                       <LineChart/>
+                   </div>
+                   <div class="col-md-3 col-lg-12 card">
+                      <DoughnutChart/>
+                   </div>
+                   <div class="col-md-12 card">
+                      <BubbleChart/>
+                   </div>
+                </div>
+        </div>
     </div>
 </template>
 
 <script>
+import VueCharts from 'vue-chartjs'
+import { Bar, Line } from 'vue-chartjs'
+import Barchart from './charts/bar'
+import LineChart from './charts/Line'
+import DoughnutChart from './charts/Doughnut'
+import PieChart from './charts/Pie'
+import BubbleChart from './charts/Bubble'
     export default {
+        components:{Barchart,LineChart,DoughnutChart,PieChart,BubbleChart},
         data () {
             return {
                 links: [
@@ -122,4 +91,31 @@
         text-transform: initial;
         text-decoration: underline;
     }
+    .card{
+        background:#13334c !important;
+        padding:1em;
+        
+        margin:10px;
+    }
+    .card:nth-child(3){
+        margin-right: 0;
+    }
+    .back{
+        background-image: url('./../assets/back1.jpg');
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+    }
+    .back .overlay{
+      background: rgba(56, 46, 46, 0.72);
+    position: absolute;
+    width: 100%;
+    min-width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    }
+
 </style>

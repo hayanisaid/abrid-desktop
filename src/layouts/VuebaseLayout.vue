@@ -10,14 +10,14 @@
                 fixed
                 app
         >
-            <v-toolbar flat class="transparent" dense>
+            <v-toolbar flat class="blue-grey darken-4" dense>
                 <v-list class="pa-0" :class="{'list-border-bottom' : miniVariant}">
                     <v-list-tile>
                         <v-list-tile-action v-if="!miniVariant">
                             <v-icon large color="orange">invert_colors</v-icon>
                         </v-list-tile-action>
                         <v-list-tile-content v-if="!miniVariant">
-                            <v-list-tile-title><h2>Vuebase</h2></v-list-tile-title>
+                            <v-list-tile-title><h2>Abrid</h2></v-list-tile-title>
                         </v-list-tile-content>
                         <v-list-tile-action>
                             <v-btn icon @click.stop="miniVariant = !miniVariant">
@@ -45,7 +45,7 @@
                         </v-list-tile>
                     </v-list>
                 </v-toolbar>
-                <span>Project Overview</span>
+                <span> Overview</span>
             </v-tooltip>
             <v-divider></v-divider>
 
@@ -73,7 +73,7 @@
             <v-divider></v-divider>
 
             <v-list subheader>
-                <v-subheader>DEVELOP</v-subheader>
+                <v-subheader>INFORMATION</v-subheader>
                 <template v-for="item in developItems">
                     <v-tooltip right :disabled="!miniVariant">
                         <v-list-tile
@@ -251,8 +251,8 @@
                     },
                     {
                         icon: 'event',
-                        title: 'Events',
-                        link: ''
+                        title: 'Expectations',
+                        link: '/map'
                     },
                     {
                         icon: 'comment',
@@ -263,8 +263,8 @@
                 developItems: [
                     {
                         icon: 'supervisor_account',
-                        title: 'Authentification',
-                        link: ''
+                        title: 'Visitor Info',
+                        link: '/map'
                     },
                     {
                         icon: 'storage',
@@ -278,12 +278,12 @@
                     },
                     {
                         icon: 'public',
-                        title: 'Hosting',
+                        title: 'Traffic',
                         link: ''
                     },
                     {
                         icon: 'functions',
-                        title: 'Functions',
+                        title: 'Suspect to be danger',
                         link: ''
                     }
                 ],

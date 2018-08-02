@@ -5,8 +5,13 @@ import App from './App'
 import router from './router'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
+import VueCharts from 'vue-chartjs'
+import { Bar, Line } from 'vue-chartjs'
+
+import Barchart from './components/charts/bar'
 
 Vue.use(Vuetify)
+
 
 Vue.config.productionTip = false
 
