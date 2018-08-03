@@ -11,7 +11,7 @@
          <div class="overlay"></div>
             <v-toolbar-title class="mx-auto" slot="extension">
                 <h1>Mangaing the Traffic in Smart way Using AI</h1>
-                <h2>Manage and Analyse the Hajj traffic</h2>
+                <h2>Manage and Analyze the Hajj traffic</h2>
                
             </v-toolbar-title>
         </v-toolbar>

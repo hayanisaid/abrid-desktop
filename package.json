@@ -1,7 +1,7 @@
 {
-  "name": "vuebase",
+  "name": "Abrid",
   "version": "1.0.0",
-  "description": "Vuebase, a Firebase-like theme",
+  "description": "Abrid, provide AI solutions for Traffic managment in palgrims",
   "main": "app.js",
   "author": "Nasirou Wagana <wnasirou@gmail.com>",
   "private": true,
