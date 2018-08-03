@@ -10,6 +10,7 @@
         >
          <div class="overlay"></div>
             <v-toolbar-title class="mx-auto" slot="extension">
+                <img src="./../assets/logo1.png" class="img-fluid responsive">
                 <h1>Mangaing the Traffic in Smart way Using AI</h1>
                 <h2>Manage and Analyze the Hajj traffic</h2>
                
